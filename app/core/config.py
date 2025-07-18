@@ -5,6 +5,8 @@ class Settings(BaseSettings):
     mongodb_uri: str
     qdrant_url: str
     langchain_api_key: str
+    milvus_url: str
+    milvus_token: str
     qdrant_api_key: str
     env: str = "dev"
 
