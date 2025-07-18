@@ -8,7 +8,7 @@ class RecursiveChunker(BaseChunker):
         self.splitter = RecursiveCharacterTextSplitter(
             chunk_size=chunk_size,
             chunk_overlap=chunk_overlap,
-            separators=["\n\n", "\n", ".", " ", ""]
+            separators=["\n\n", "\n", ".", "!", "?", ",", " "]
         )
 
     def chunk(self, documents: List[Document]) -> List[Document]:
