@@ -14,7 +14,7 @@ class PyMuPDFLoaderWrapper(BaseLoader):
             documents.extend(loader.load())
         elif p.is_dir():
             for file_path in p.glob("*.pdf"):
-                loader = PyMuPDFLoader(str(file_path))
+                loader = PyMuPDFLoader(file_path=str(file_path))
                 documents.extend(loader.load())
         else:
             raise FileNotFoundError(f"Path '{path}' is neither a file nor a directory.")

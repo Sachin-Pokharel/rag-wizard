@@ -1,5 +1,5 @@
-from pymupdf_loader import PyMuPDFLoaderWrapper
-from base import BaseLoader
+from .pymupdf_loader import PyMuPDFLoaderWrapper
+from .base import BaseLoader
 
 # More loaders can be imported and registered here
 LOADER_REGISTRY = {
