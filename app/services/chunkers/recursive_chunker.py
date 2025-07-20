@@ -12,4 +12,7 @@ class RecursiveChunker(BaseChunker):
         )
 
     def chunk(self, documents: List[Document]) -> List[Document]:
-        return self.splitter.split_documents(documents)
+        splitted_chunks = self.splitter.split_documents(documents)
+        for chunk in splitted_chunks:
+            chunk.metadata["text"] = chunk.page_content
+        return splitted_chunks
