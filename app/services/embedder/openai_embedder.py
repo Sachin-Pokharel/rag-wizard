@@ -19,6 +19,15 @@ class OpenAIEmbedder(EmbedderBase):
         )
         return [record.embedding for record in response.data]
 
+    def embed_query(self, text: str) -> List[float]:
+        if not text:
+            return []
+        response = self.client.embeddings.create(
+            model=self.model_name,
+            input=[text]
+        )
+        return response.data[0].embedding
+
 
     @property
     def dimension(self) -> int:
