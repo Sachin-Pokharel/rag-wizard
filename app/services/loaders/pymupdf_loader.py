@@ -36,7 +36,6 @@ class PyMuPDFLoaderWrapper(BaseLoader):
                 "document_id": str(uuid.uuid4()),
                 "source": metadata.get("source") or "",
                 "title": metadata.get("title") or "",
-                "chunk_text_preview": clean_and_normalize_text(doc.page_content[:500]),
                 "page_no": page_no,
                 "created_at": metadata.get("creationDate")
                 or metadata.get("creationdate")
